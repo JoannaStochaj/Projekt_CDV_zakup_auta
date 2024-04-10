@@ -1,0 +1,152 @@
+body {
+  font-family: "Farro", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: ghostwhite;
+  width: fit-content;
+}
+
+h1 {
+  margin: 50px;
+}
+
+.cars img {
+  width: 300px;
+  height: auto;
+  align-items: right;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.cars h1 {
+  text-align: center;
+}
+
+.cars button {
+  height: 60px;
+  width: 150px;
+  background-color: #006600;
+  border: 1px solid #006600;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+}
+
+#carList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 500px;
+  height: auto;
+}
+
+.carItem {
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 10px;
+  margin: 50px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.carItem:hover {
+  background-color: #f9f9f9;
+}
+
+#configForm {
+  display: none;
+  max-width: 400px;
+  padding: 20px;
+  background-color: ghostwhite;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+
+p {
+  margin: 50px;
+}
+
+input {
+  margin: 10px;
+  height: 30px;
+}
+
+.delivery {
+  height: 30px;
+}
+
+.next-btn {
+  display: flex;
+  flex-direction: column;
+  margin: 35px;
+  padding: 20px;
+}
+
+.next-btn button {
+  margin: 10px;
+  height: 40px;
+  font-family: "Farro", sans-serif;
+}
+
+#order {
+  background-color: #006600;
+  border: 1px solid #006600;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  font-family: "Farro", sans-serif;
+}
+
+#go-back {
+  background-color: #ff0000;
+  border: 1px solid #ff0000;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  font-family: "Farro", sans-serif;
+}
+
+.add-remove-btn {
+  height: auto;
+  width: 100px;
+  font-family: "Farro", sans-serif;
+}
+
+.accessories {
+  height: auto;
+  width: 150px;
+  font-family: "Farro", sans-serif;
+}
+
+#selectedCarModel,
+#selectedCarPrice {
+  margin: 0;
+}
+
+.hint {
+  font-size: 12px;
+  color: #666;
+}

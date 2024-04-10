@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konfigurator zakupu auta</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="cars">
+      <ul id="carList">
+        <h1>Wybierz auto <br />i skongfiguruj je dla siebie</h1>
+        <li class="carItem">
+          <p class="title">Toyota Corolla Hatchback Comfort</p>
+          <img src="/assets/Corolla Hatchback Comfort.webp" />
+          <p>
+            <strong>Marka:</strong> Toyota<br />
+            <strong>Model:</strong> Corolla Hatchback Comfort<br />
+            <strong>Rok produkcji:</strong> 2021<br />
+            <strong>Rocznik:</strong> 2021<br />
+            <strong>Moc silnika:</strong> 140 KM<br />
+            <strong>Przebieg:</strong> 10 000 km
+          </p>
+          <p class="price"><strong>Cena:</strong> 129 000 zł<br /></p>
+          <p>
+            <button
+              onclick="showConfigForm('Car Model 1', 'Toyota Corolla Hatchback Comfort', '129000 zł')"
+            >
+              Konfiguruj
+            </button>
+          </p>
+        </li>
+
+        <li class="carItem">
+          <p class="title">Toyota Corolla Hatchback Style</p>
+          <img src="/assets/Corolla Hatchback Style.webp" />
+          <p>
+            <strong>Marka:</strong> Toyota<br />
+            <strong>Model:</strong> Corolla Hatchback Style<br />
+            <strong>Rok produkcji:</strong> 2023<br />
+            <strong>Rocznik:</strong> 2021<br />
+            <strong>Moc silnika:</strong> 140 KM<br />
+            <strong>Przebieg:</strong> 5 000 km
+          </p>
+          <p class="price"><strong>Cena:</strong> 141 400 zł<br /></p>
+          <p>
+            <button
+              onclick="showConfigForm('Car Model 2', 'Toyota Corolla Hatchback Style', '141000 zł')"
+            >
+              Konfiguruj
+            </button>
+          </p>
+        </li>
+        <li class="carItem">
+          <p class="title">Toyota Corolla Hatchback GR SPORT</p>
+          <img src="/assets/Corolla Hatchback GR SPORT.webp" />
+          <p>
+            <strong>Marka:</strong> Toyota<br />
+            <strong>Model:</strong> Corolla Hatchback GR SPORT<br />
+            <strong>Rok produkcji:</strong> 2023<br />
+            <strong>Rocznik:</strong> 2021<br />
+            <strong>Moc silnika:</strong> 140 KM<br />
+            <strong>Przebieg:</strong> 5 000 km<br />
+          </p>
+
+          <p><strong>Cena:</strong> 148 400 zł<br /></p>
+          <p>
+            <button
+              onclick="showConfigForm('Car Model 3', 'Toyota Corolla Hatchback GR SPORT', '148400 zł')"
+            >
+              Konfiguruj
+            </button>
+          </p>
+        </li>
+
+        <li class="carItem">
+          <p class="title">Toyota Corolla Hatchback Executive</p>
+          <img src="/assets/Corolla Hatchback Executive.webp" />
+          <p>
+            <strong>Marka:</strong> Toyota<br />
+            <strong>Model:</strong> Corolla Hatchback Executive<br />
+            <strong>Rok produkcji:</strong> 2023<br />
+            <strong>Cena:</strong> 141 400 zł<br />
+            <strong>Rocznik:</strong> 2021<br />
+            <strong>Moc silnika:</strong> 140 KM<br />
+            <strong>Przebieg:</strong> 5 000 km
+          </p>
+          <p><strong>Cena:</strong> 141 400 zł<br /></p>
+          <p>
+            <button
+              onclick="showConfigForm('Car Model 4', 'Toyota Corolla Hatchback Executive', '141400 zł')"
+            >
+              Konfiguruj
+            </button>
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <div id="configForm">
+      <h1>Konfigurator</h1>
+
+      <h2>Wybrane auto</h2>
+      <p id="selectedCarModel"></p>
+      <p id="selectedCarPrice"></p>
+      <form>
+        <label for="color">Kolor:</label>
+        <input type="text" id="color" name="color" required /><br />
+
+        <h2>Finansowanie</h2>
+        <input
+          class="radio"
+          type="radio"
+          name="financing"
+          value="leasing"
+          id="leasing"
+        />
+        <label for="leasing">Leasing</label>
+
+        <input
+          class="radio"
+          type="radio"
+          name="financing"
+          value="leasing"
+          id="leasing"
+        />
+        <label for="cash">Gotówka</label>
+
+        <h2>Dane właściciela</h2>
+        <label for="name-and-surname">Imię i nazwisko</label>
+        <input
+          type="text"
+          id="name-and-surname"
+          name="name-and-surname"
+          pattern="^[A-Za-z]+ [A-Za-z]+$"
+          required
+        /><br />
+        <span id="name-error"></span>
+
+        <label for="collection">Miejsce odbioru</label>
+        <input type="text" id="collection" name="collection" required /><br />
+        <span id="collection-error"></span>
+
+        <label for="delivery">Data dostawy</label>
+        <select class="delivery" id="delivery"></select>
+
+        <h2>Akcesoria</h2>
+        <select class="accessories" id="accessories" multiply>
+          <option value="1" data-price="200" data-name="Nawigacja GPS">
+            Nawigacja GPS - 200 zł
+          </option>
+          <option value="2" data-price="1500" data-name="Kamera cofania">
+            Kamera cofania - 1500 zł
+          </option>
+          <option value="3" data-price="3000" data-name="Opony zimowe">
+            Opony zimowe - 3000 zł
+          </option>
+          <option value="4" data-price="10000" data-name="Podgrzewane fotele">
+            Podgrzewane fotele - 10 000 zł
+          </option>
+        </select>
+
+        <button type="button" class="add-remove-btn" onclick="addAccessory()">
+          Dodaj akcesorium
+        </button>
+        <button
+          type="button"
+          class="add-remove-btn"
+          onclick="removeAccessory()"
+        >
+          Usuń akcesorium
+        </button>
+
+        <div class="accessory-container">
+          <h2>Dodane akcesoria</h2>
+          <ul id="accessory-list"></ul>
+          <h3>Cena całkowita: <span id="total-price">0</span> zł</h3>
+        </div>
+
+        <div class="next-btn">
+          <button type="button" id="order" onclick="showLastForm()">
+            Zamów
+          </button>
+
+          <button id="go-back" onclick="goBack()">Powrót do wyboru</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
