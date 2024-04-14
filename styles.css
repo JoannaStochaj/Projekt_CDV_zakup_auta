@@ -40,8 +40,8 @@ h1 {
 .cars button {
   height: 60px;
   width: 150px;
-  background-color: #006600;
-  border: 1px solid #006600;
+  background-color: #003c43;
+  border: 1px solid #003c43;
   cursor: pointer;
   color: white;
   font-size: 18px;
@@ -112,8 +112,8 @@ input {
 }
 
 #order {
-  background-color: #006600;
-  border: 1px solid #006600;
+  background-color: #003c43;
+  border: 1px solid #003c43;
   cursor: pointer;
   color: white;
   font-size: 18px;
@@ -121,10 +121,10 @@ input {
 }
 
 #go-back {
-  background-color: #ff0000;
-  border: 1px solid #ff0000;
+  background-color: ghostwhite;
+  border: none;
   cursor: pointer;
-  color: white;
+  color: #003c43;
   font-size: 18px;
   font-family: "Farro", sans-serif;
 }

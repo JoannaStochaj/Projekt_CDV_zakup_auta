@@ -19,7 +19,7 @@
         <h1>Wybierz auto <br />i skongfiguruj je dla siebie</h1>
         <li class="carItem">
           <p class="title">Toyota Corolla Hatchback Comfort</p>
-          <img src="/assets/Corolla Hatchback Comfort.webp" />
+          <img id="carImage" src="/assets/Corolla Hatchback Comfort.webp" />
           <p>
             <strong>Marka:</strong> Toyota<br />
             <strong>Model:</strong> Corolla Hatchback Comfort<br />
@@ -31,7 +31,7 @@
           <p class="price"><strong>Cena:</strong> 129 000 zł<br /></p>
           <p>
             <button
-              onclick="showConfigForm('Car Model 1', 'Toyota Corolla Hatchback Comfort', '129000 zł')"
+              onclick="showConfigForm('Car Model 1', 'Toyota Corolla Hatchback Comfort', '129000 zł', '/assets/Corolla Hatchback Comfort.webp')"
             >
               Konfiguruj
             </button>
@@ -52,7 +52,7 @@
           <p class="price"><strong>Cena:</strong> 141 400 zł<br /></p>
           <p>
             <button
-              onclick="showConfigForm('Car Model 2', 'Toyota Corolla Hatchback Style', '141000 zł')"
+              onclick="showConfigForm('Car Model 2', 'Toyota Corolla Hatchback Style', '141000 zł', '/assets/Corolla Hatchback Style.webp')"
             >
               Konfiguruj
             </button>
@@ -73,7 +73,7 @@
           <p><strong>Cena:</strong> 148 400 zł<br /></p>
           <p>
             <button
-              onclick="showConfigForm('Car Model 3', 'Toyota Corolla Hatchback GR SPORT', '148400 zł')"
+              onclick="showConfigForm('Car Model 3', 'Toyota Corolla Hatchback GR SPORT', '148400 zł','/assets/Corolla Hatchback GR SPORT.webp')"
             >
               Konfiguruj
             </button>
@@ -95,7 +95,7 @@
           <p><strong>Cena:</strong> 141 400 zł<br /></p>
           <p>
             <button
-              onclick="showConfigForm('Car Model 4', 'Toyota Corolla Hatchback Executive', '141400 zł')"
+              onclick="showConfigForm('Car Model 4', 'Toyota Corolla Hatchback Executive', '141400 zł','/assets/Corolla Hatchback Executive.webp')"
             >
               Konfiguruj
             </button>
@@ -121,6 +121,7 @@
           name="financing"
           value="leasing"
           id="leasing"
+          required
         />
         <label for="leasing">Leasing</label>
 
@@ -128,10 +129,11 @@
           class="radio"
           type="radio"
           name="financing"
-          value="leasing"
-          id="leasing"
+          value="gotówka"
+          id="cash"
+          required
         />
-        <label for="cash">Gotówka</label>
+        <label for="gotówka">Gotówka</label>
 
         <h2>Dane właściciela</h2>
         <label for="name-and-surname">Imię i nazwisko</label>
@@ -142,11 +144,9 @@
           pattern="^[A-Za-z]+ [A-Za-z]+$"
           required
         /><br />
-        <span id="name-error"></span>
 
         <label for="collection">Miejsce odbioru</label>
         <input type="text" id="collection" name="collection" required /><br />
-        <span id="collection-error"></span>
 
         <label for="delivery">Data dostawy</label>
         <select class="delivery" id="delivery"></select>
@@ -185,7 +185,7 @@
         </div>
 
         <div class="next-btn">
-          <button type="button" id="order" onclick="showLastForm()">
+          <button type="button" id="order" onclick="validateAndPlaceOrder()">
             Zamów
           </button>
 
