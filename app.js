@@ -11,11 +11,9 @@ function showConfigForm(carModel, carName, price, imagePath) {
   localStorage.setItem("selectedCarName", carName);
   localStorage.setItem("selectedCarImagePath", imagePath);
 
-  // Ustawienie informacji o wybranym modelu
   const selectedCarModel = document.getElementById("selectedCarModel");
   selectedCarModel.innerHTML = `<div><strong>Model:</strong> ${carName}<br><img src="${imagePath}" alt="${carName}" style="max-width: 300px; max-height: 300px; margin: 50px;"></div>`;
 
-  // Ustawienie ceny
   document.getElementById("selectedCarPrice").textContent = `Cena: ${price}`;
   document.getElementById("total-price").textContent = totalPrice;
 
@@ -43,7 +41,6 @@ function goBack() {
   document.getElementById("carList").style.display = "block";
 }
 
-// Funkcja dodająca akcesorium
 function addAccessory() {
   let select = document.getElementById("accessories");
   let selectedIndex = select.selectedIndex;
@@ -62,7 +59,6 @@ function addAccessory() {
   }
 }
 
-// Funkcja usuwająca akcesorium
 function removeAccessory() {
   let accessoryList = document.getElementById("accessory-list");
   if (accessoryList.children.length > 0) {
@@ -70,12 +66,11 @@ function removeAccessory() {
       accessoryList.lastChild.textContent.split(" - ")[1]
     );
     totalPrice -= lastAccessoryPrice;
-    document.getElementById("total-price").textContent = totalPrice.toFixed(2);
+    document.getElementById("total-price").textContent = totalPrice;
     accessoryList.removeChild(accessoryList.lastChild);
   }
 }
 
-// Funkcja walidująca formularz i wykonująca zamówienie
 function validateAndPlaceOrder() {
   const form = document.querySelector("form");
   let errorMessage = document.getElementById("error-message");
@@ -85,8 +80,8 @@ function validateAndPlaceOrder() {
     errorMessage.textContent =
       "Proszę wypełnić wszystkie wymagane pola formularza.";
     errorMessage.style.color = "red";
-    errorMessage.style.textAlign = "center"; // Ustawienie tekstu na środku
-    errorMessage.style.padding = "0"; // Usunięcie paddingów
+    errorMessage.style.textAlign = "center";
+    errorMessage.style.padding = "0";
     errorMessage.id = "error-message";
 
     form.parentNode.appendChild(errorMessage);
@@ -100,14 +95,10 @@ function validateAndPlaceOrder() {
 function placeOrder() {
   const form = document.querySelector("form");
   if (form.checkValidity()) {
-    // Sprawdź, czy formularz jest poprawny
     saveFormDataToLocalStorage(form);
-    window.location.href = "lastPage.html"; // Przekierowanie na kolejną stronę
-  } else {
-    alert("Proszę wypełnić wszystkie wymagane pola.");
+    window.location.href = "lastPage.html";
   }
 }
-
 function saveFormDataToLocalStorage(form) {
   const formData = new FormData(form);
   const formDataObject = {};
@@ -115,7 +106,7 @@ function saveFormDataToLocalStorage(form) {
     formDataObject[key] = value;
   }
   formDataObject["deliveryDate"] = formDataObject["delivery"];
-  formDataObject["total-price"] = totalPrice; // Dodaj to do zapisywanych danych
+  formDataObject["total-price"] = totalPrice;
   console.log("Form Data Object:", formDataObject);
   localStorage.setItem("formData", JSON.stringify(formDataObject));
 }
@@ -129,7 +120,6 @@ function displayOrderDetails() {
   if (savedData) {
     const formDataObject = JSON.parse(savedData);
 
-    // Wyświetlanie metody płatności
     const paymentMethod = formDataObject["financing"];
     if (paymentMethod) {
       const paymentMethodElement = document.getElementById("payment-method");
@@ -138,7 +128,6 @@ function displayOrderDetails() {
       }
     }
 
-    // Wyświetlanie wybranego modelu auta
     const selectedCarName = localStorage.getItem("selectedCarName");
     const selectedCarImagePath = localStorage.getItem("selectedCarImagePath");
 
@@ -150,7 +139,6 @@ function displayOrderDetails() {
       }
     }
 
-    // Wyświetlanie całkowitej ceny
     const totalPriceFromStorage = formDataObject["total-price"];
     if (totalPriceFromStorage) {
       const totalPriceElement = document.getElementById("total-price");
