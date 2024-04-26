@@ -1,5 +1,8 @@
 let carPrice = 0;
 let totalPrice = 0;
+let formDataObject = {};
+
+document.getElementById("configForm").style.display = "none";
 
 function showConfigForm(carModel, carName, price, imagePath) {
   carPrice = parseFloat(price);

@@ -16,7 +16,7 @@
   <body>
     <div class="cars">
       <ul id="carList">
-        <h1>Wybierz auto <br />i skongfiguruj je dla siebie</h1>
+        <h1>Wybierz auto i skongfiguruj je dla siebie</h1>
         <li class="carItem">
           <p class="title">Toyota Corolla Hatchback Comfort</p>
           <img id="carImage" src="/assets/Corolla Hatchback Comfort.jpg" />
@@ -24,7 +24,6 @@
             <strong>Marka:</strong> Toyota<br />
             <strong>Model:</strong> Corolla Hatchback Comfort<br />
             <strong>Rok produkcji:</strong> 2021<br />
-            <strong>Rocznik:</strong> 2021<br />
             <strong>Moc silnika:</strong> 140 KM<br />
             <strong>Przebieg:</strong> 10 000 km
           </p>
@@ -45,7 +44,6 @@
             <strong>Marka:</strong> Toyota<br />
             <strong>Model:</strong> Corolla Hatchback Style<br />
             <strong>Rok produkcji:</strong> 2023<br />
-            <strong>Rocznik:</strong> 2021<br />
             <strong>Moc silnika:</strong> 140 KM<br />
             <strong>Przebieg:</strong> 5 000 km
           </p>
@@ -65,7 +63,6 @@
             <strong>Marka:</strong> Toyota<br />
             <strong>Model:</strong> Corolla Hatchback GR SPORT<br />
             <strong>Rok produkcji:</strong> 2023<br />
-            <strong>Rocznik:</strong> 2021<br />
             <strong>Moc silnika:</strong> 140 KM<br />
             <strong>Przebieg:</strong> 5 000 km<br />
           </p>
@@ -89,7 +86,6 @@
             <strong>Model:</strong> Corolla Hatchback Executive<br />
             <strong>Rok produkcji:</strong> 2023<br />
             <strong>Cena:</strong> 141 400 zł<br />
-            <strong>Rocznik:</strong> 2021<br />
             <strong>Moc silnika:</strong> 140 KM<br />
             <strong>Przebieg:</strong> 5 000 km
           </p>
@@ -108,35 +104,34 @@
     <div id="configForm">
       <h1>Konfigurator</h1>
 
-      <h2>Wybrane auto</h2>
       <p id="selectedCarModel"></p>
       <p id="selectedCarPrice"></p>
       <form>
         <label for="color">Kolor:</label>
         <input type="text" id="color" name="color" required /><br />
+        <div class="options">
+          <h2>Finansowanie:</h2>
+          <input
+            class="radio"
+            type="radio"
+            name="financing"
+            value="leasing"
+            id="leasing"
+            required
+          />
+          <label for="leasing">Leasing</label>
 
-        <h2>Finansowanie</h2>
-        <input
-          class="radio"
-          type="radio"
-          name="financing"
-          value="leasing"
-          id="leasing"
-          required
-        />
-        <label for="leasing">Leasing</label>
-
-        <input
-          class="radio"
-          type="radio"
-          name="financing"
-          value="gotówka"
-          id="cash"
-          required
-        />
-        <label for="gotówka">Gotówka</label>
-
-        <h2>Dane właściciela</h2>
+          <input
+            class="radio"
+            type="radio"
+            name="financing"
+            value="gotówka"
+            id="cash"
+            required
+          />
+          <label for="gotówka">Gotówka</label>
+        </div>
+        <h2>Dane właściciela:</h2>
         <label for="name-and-surname">Imię i nazwisko</label>
         <input
           type="text"
@@ -152,7 +147,7 @@
         <label for="delivery">Data dostawy</label>
         <select class="delivery" id="delivery"></select>
 
-        <h2>Akcesoria</h2>
+        <h2>Akcesoria:</h2>
         <select class="accessories" id="accessories" multiply>
           <option value="1" data-price="200" data-name="Nawigacja GPS">
             Nawigacja GPS - 200 zł
@@ -180,7 +175,7 @@
         </button>
 
         <div class="accessory-container">
-          <h2>Dodane akcesoria</h2>
+          <h2>Dodane akcesoria:</h2>
           <ul id="accessory-list"></ul>
           <h3>Cena całkowita: <span id="total-price">0</span> zł</h3>
         </div>
