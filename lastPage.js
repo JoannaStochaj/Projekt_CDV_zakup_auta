@@ -39,3 +39,7 @@ function displayOrderDetails() {
 window.onload = function () {
   displayOrderDetails();
 };
+
+function goBack() {
+  window.location.href = "index.html";
+}

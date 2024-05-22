@@ -208,3 +208,8 @@ h2 {
   font-size: 16px;
   font-family: "Farro", sans-serif;
 }
+
+.thank-you button {
+  width: 400px;
+  height: 45px;
+}

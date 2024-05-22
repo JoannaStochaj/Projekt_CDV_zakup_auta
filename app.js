@@ -102,6 +102,7 @@ function placeOrder() {
     window.location.href = "lastPage.html";
   }
 }
+
 function saveFormDataToLocalStorage(form) {
   const formData = new FormData(form);
   const formDataObject = {};
