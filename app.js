@@ -63,7 +63,7 @@ function addAccessory() {
 }
 
 function removeAccessory() {
-  let accessoryList = document.getElementById("accessory-list");
+  const accessoryList = document.getElementById("accessory-list");
   if (accessoryList.children.length > 0) {
     let lastAccessoryPrice = parseFloat(
       accessoryList.lastChild.textContent.split(" - ")[1]
@@ -81,7 +81,7 @@ function validateAndPlaceOrder() {
   if (!errorMessage) {
     errorMessage = document.createElement("p");
     errorMessage.textContent =
-      "Proszę wypełnić wszystkie wymagane pola formularza.";
+      "* Proszę wypełnić wszystkie wymagane pola formularza.";
     errorMessage.style.color = "red";
     errorMessage.style.textAlign = "center";
     errorMessage.style.padding = "0";
